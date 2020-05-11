@@ -1,7 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 
-export const Landing = () => {
+
+export const Landing = ({ isAuthenticated }) => {
+
+  //this is where the props is called
+  //if it is authenticated then redirect to dashboard
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />
+  }
+
   return (
     <section className="landing">
       <div className="dark-overlay">
@@ -24,5 +34,14 @@ export const Landing = () => {
     </section>
   );
 };
+//defining what that prop
+Landing.propTypes = {
+  isAuthenticated: PropTypes.bool
+}
 
-export default Landing;
+//props is creted here. Simply a props is a state
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(Landing);
