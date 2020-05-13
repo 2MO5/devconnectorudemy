@@ -1,16 +1,39 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Spinner } from '../layout/Spinner';
+import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
+import { Link } from 'react-router-dom';
+import Experience from './Experience';
+import DashboardActions from './DashboardActions';
 
-const Dashboard = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
+const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
     useEffect(() => { getCurrentProfile() }, []);
 
     //Profile is still loading and its null? then show the spinner
     // else show the profile fragment
     return loading && profile === null ? <Spinner /> : <Fragment>
-        testing
+        <h1 className="large text-primary"> Dashboard</h1>
+        <p className="lead">
+            <i className="fas fa-user"></i> Welcome {user && user.name}
+        </p>
+        {profile !== null ?
+            (<Fragment>
+                <DashboardActions />
+                <Experience experience={profile.experience} />
+            </Fragment>
+            )
+            :
+            (
+
+                <Fragment>
+                    <p> Dude! you have no Profile! Go ahead and create a profile </p>
+                    <Link to='/create-profile' className='btn btn-primary my-1'>Create Profile</Link>
+                </Fragment>
+            )
+
+
+        }
     </Fragment>
 }
 

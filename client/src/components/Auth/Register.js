@@ -15,8 +15,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        passowrd: '',
-        passowrd2: ''
+        password: '',
+        password2: ''
     });
 
     //pulling out the name, enail and password

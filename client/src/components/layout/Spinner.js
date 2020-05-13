@@ -2,18 +2,17 @@
 // The code related to that spinographic is this
 
 import React, { Fragment } from 'react';
-import spinner from './images/spinner.gif';
+import spinner from './images/spinner_black.gif';
 
 
-export default () => {
+export default () => (
     <Fragment>
 
         <img
             src={spinner}
-            style={{ width: '200px', margin: 'auto', display: 'block' }}
+            style={{ width: '100px', margin: 'auto', display: 'block', position: 'absolute', top: '50%', left: '45%' }}
             alt='loading...'
         />
     </Fragment>
-};
+);
 
-export default Spinner;
