@@ -1,3 +1,5 @@
+
+/*
 import React, { useState, Fragment, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -220,3 +222,4 @@ const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(EditProfile));
+*/

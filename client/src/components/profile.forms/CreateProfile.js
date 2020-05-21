@@ -1,3 +1,5 @@
+/*
+
 import React, { useState, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -137,7 +139,7 @@ const CreateProfile = ({ createProfile, history }) => {
                 </div>
 
 
-                //if the displaySocialInputs is true then show the followings in the fragment               
+                //if the displaySocialInputs is true then show the followings in the fragment
                 {displaySocialInputs && <Fragment>
 
 
@@ -186,3 +188,4 @@ CreateProfile.propTypes = {
 }
 
 export default connect(null, { createProfile })(withRouter(CreateProfile));
+*/
