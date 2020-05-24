@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile'; //bringing in the addExperince function
@@ -60,7 +60,7 @@ const AddEducation = ({ addEducation, history }) => {
                 </div>
                 <div class="form-group">
                     <h4>To Date</h4>
-                    //to value needed to be disabled if todate diable value is true
+                    {/*to value needed to be disabled if todate diable value is true*/}
                     <input type="date" name="to" value={to} onChange={e => onChange(e)} disabled={toDateDisabled ? 'disabled' : ''} /> //if disabled show or set this to 'disable' else keep it empty
 
                 </div>
@@ -85,4 +85,4 @@ AddEducation.propTypes = {
 
 }
 
-export default connect(null, { addEducation })(AddEducation);
+export default connect(null, { addEducation })(withRouter(AddEducation));

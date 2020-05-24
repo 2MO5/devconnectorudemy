@@ -1,4 +1,4 @@
-/*
+
 
 import React, { useState, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
@@ -188,4 +188,3 @@ CreateProfile.propTypes = {
 }
 
 export default connect(null, { createProfile })(withRouter(CreateProfile));
-*/

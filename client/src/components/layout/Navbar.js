@@ -11,11 +11,17 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => { //ad
     <ul>
 
       <li>
+        <Link to="/profiles">
+          Developers
+        </Link>
+      </li>
+      <li>
         <Link to="/dashboard">
           <i className='fas fa-user' />{' '}
           <span className='hide-sm'>Dashboard</span>
         </Link>
       </li>
+
       <li>
         <a onClick={logout} href='#!'>
           <i className='fas fa-sign-out-alt' />{' '}
@@ -29,7 +35,9 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => { //ad
 
     <ul>
       <li>
-        <Link to="!#">Developers</Link>
+        <Link to="/profiles">
+          Developers
+        </Link>
       </li>
       <li>
         <Link to="/register">Register</Link>

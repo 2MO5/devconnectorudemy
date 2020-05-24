@@ -1,5 +1,12 @@
-
-import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, UPDATE_PROFILE } from "../actions/types";
+//reucers REDUCE the most important thing and give it to the browser
+import {
+    GET_PROFILE,
+    PROFILE_ERROR,
+    CLEAR_PROFILE,
+    UPDATE_PROFILE,
+    GET_PROFILES,
+    GET_REPOS
+} from "../actions/types";
 
 // reducers is where all the data is REDUCED into a bit sized chunk and stored and shown in the redux store that you see in the browser
 const initialState = {
@@ -17,8 +24,15 @@ export default function (state = initialState, action) {
         case GET_PROFILE:
         case UPDATE_PROFILE:
             return {
-                ...state,
+                ...state, //current states
                 profile: payload,
+                loading: false
+            }
+
+        case GET_PROFILES:
+            return {
+                ...state,
+                profiles: payload,
                 loading: false
             }
 
@@ -36,6 +50,12 @@ export default function (state = initialState, action) {
                 loading: false
             }
 
+        case GET_REPOS:
+            return {
+                ...state,
+                repos: payload,
+                loading: false
+            }
 
         default:
             return state;

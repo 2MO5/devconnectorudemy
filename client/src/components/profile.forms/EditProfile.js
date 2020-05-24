@@ -1,5 +1,4 @@
 
-/*
 import React, { useState, Fragment, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -55,7 +54,7 @@ const EditProfile = ({
             instagram: loading || !profile.social ? '' : profile.social.instagram,
 
         });
-    }, [loading]); // we want this to be run when loading
+    }, [loading, getCurrentProfile]); // we want this to be run when loading
 
     const {
         company,
@@ -222,4 +221,3 @@ const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(EditProfile));
-*/
